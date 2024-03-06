@@ -16,12 +16,14 @@ button.addEventListener("click", () => {
   }
 });
 
-//შევქმნათ ფუნქცია სადაც გავარკვევთ სიტყვა პალინდრომია თუ არა
-// მაგალითად დავწერ ასეთ ლოგიკას : თუ ინფუთ ველიუში ჩაწერილი სიტყვის
-// ავერსი უდრის რევერსს მაშინ ეს სიტყვა პალინდრომია
-
 function palindrome() {
-  let inputValue = input.value.trim();
+  let inputValue = input.value
+    .trim()
+    .toLowerCase()
+    //1. **`.replace()`**: ეს არის JavaScript-ის მეთოდი,
+    // რომელიც გამოიყენება სტრიქონში მითითებული მნიშვნელობის ან ნიმუშის მოსაძებნად
+    //და სხვა მნიშვნელობით ან ნიმუშით ჩანაცვლებისთვის.
+    .replace(/[^a-zA-Z0-9]/g, "");
   let reverseInput = inputValue.split("").reverse().join("");
   if (inputValue === reverseInput) {
     result.innerHTML = `${input.value} is a palindrome`;
