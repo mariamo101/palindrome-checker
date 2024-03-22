@@ -27,7 +27,7 @@ function palindrome() {
   let reverseInput = inputValue.split("").reverse().join("");
   if (inputValue === reverseInput) {
     result.innerHTML = `${input.value} is a palindrome`;
-    result.style.color = "red";
+    result.style.color = "orange";
     result.style.marginTop = "1rem";
   } else {
     result.innerHTML = `${input.value} is not a palindrome`;
